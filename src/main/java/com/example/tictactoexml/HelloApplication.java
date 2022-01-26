@@ -24,7 +24,5 @@ public class HelloApplication extends Application {
 
         launch();
 
-        HelloController hc = new HelloController();
-
     }
 }
