@@ -6,8 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 import java.net.URL;
 import java.util.Random;
@@ -18,7 +16,6 @@ public class HelloController implements Initializable {
     static Random random = new Random();
     static boolean turnActual;
     static Button[] btn = new Button[9];
-    static HelloApplication joc;
     static int contadorVX = 0;
     static int contadorVO = 0;
     static int chance_flag = 0;
@@ -53,11 +50,11 @@ public class HelloController implements Initializable {
         chance_flag++;
         if (turnActual) {
             turnActual = false;
-            lblTurn.setText("TURN DE O");
+            lblTurn.setText("TORN DE O");
             ((Button)event.getSource()).setText("X");
         } else {
             turnActual = true;
-            lblTurn.setText("TURN DE X");
+            lblTurn.setText("TORN DE X");
             ((Button)event.getSource()).setText("O");
         }
         ((Button)event.getSource()).setDisable(true);
@@ -83,40 +80,40 @@ public class HelloController implements Initializable {
     }
 
     public void guanyador() {
-        if ((btn[0].getText() == "X") && (btn[1].getText() == "X") && (btn[2].getText() == "X")) {
-            xGuanya(0, 1, 2);
-        } else if ((btn[0].getText() == "X") && (btn[4].getText() == "X") && (btn[8].getText() == "X")) {
-            xGuanya(0, 4, 8);
-        } else if ((btn[0].getText() == "X") && (btn[3].getText() == "X") && (btn[6].getText() == "X")) {
-            xGuanya(0, 3, 6);
-        } else if ((btn[1].getText() == "X") && (btn[4].getText() == "X") && (btn[7].getText() == "X")) {
-            xGuanya(1, 4, 7);
-        } else if ((btn[2].getText() == "X") && (btn[4].getText() == "X") && (btn[6].getText() == "X")) {
-            xGuanya(2, 4, 6);
-        } else if ((btn[2].getText() == "X") && (btn[5].getText() == "X") && (btn[8].getText() == "X")) {
-            xGuanya(2, 5, 8);
-        } else if ((btn[3].getText() == "X") && (btn[4].getText() == "X") && (btn[5].getText() == "X")) {
-            xGuanya(3, 4, 5);
-        } else if ((btn[6].getText() == "X") && (btn[7].getText() == "X") && (btn[8].getText() == "X")) {
-            xGuanya(6, 7, 8);
+        if ((btn[0].getText().equals("X")) && (btn[1].getText().equals("X")) && (btn[2].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[0].getText().equals("X")) && (btn[4].getText().equals("X")) && (btn[8].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[0].getText().equals("X")) && (btn[3].getText().equals("X")) && (btn[6].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[1].getText().equals("X")) && (btn[4].getText().equals("X")) && (btn[7].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[2].getText().equals("X")) && (btn[4].getText().equals("X")) && (btn[6].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[2].getText().equals("X")) && (btn[5].getText().equals("X")) && (btn[8].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[3].getText().equals("X")) && (btn[4].getText().equals("X")) && (btn[5].getText().equals("X"))) {
+            xGuanya();
+        } else if ((btn[6].getText().equals("X")) && (btn[7].getText().equals("X")) && (btn[8].getText().equals("X"))) {
+            xGuanya();
         }
 
-        else if ((btn[0].getText() == "O") && (btn[1].getText() == "O") && (btn[2].getText() == "O")) {
-            oGuanya(0, 1, 2);
-        } else if ((btn[0].getText() == "O") && (btn[3].getText() == "O") && (btn[6].getText() == "O")) {
-            oGuanya(0, 3, 6);
-        } else if ((btn[0].getText() == "O") && (btn[4].getText() == "O") && (btn[8].getText() == "O")) {
-            oGuanya(0, 4, 8);
-        } else if ((btn[1].getText() == "O") && (btn[4].getText() == "O") && (btn[7].getText() == "O")) {
-            oGuanya(1, 4, 7);
-        } else if ((btn[2].getText() == "O") && (btn[4].getText() == "O") && (btn[6].getText() == "O")) {
-            oGuanya(2, 4, 6);
-        } else if ((btn[2].getText() == "O") && (btn[5].getText() == "O") && (btn[8].getText() == "O")) {
-            oGuanya(2, 5, 8);
-        } else if ((btn[3].getText() == "O") && (btn[4].getText() == "O") && (btn[5].getText() == "O")) {
-            oGuanya(3, 4, 5);
-        } else if ((btn[6].getText() == "O") && (btn[7].getText() == "O") && (btn[8].getText() == "O")) {
-            oGuanya(6, 7, 8);
+        else if ((btn[0].getText().equals("O")) && (btn[1].getText().equals("O")) && (btn[2].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[0].getText().equals("O")) && (btn[3].getText().equals("O")) && (btn[6].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[0].getText().equals("O")) && (btn[4].getText().equals("O")) && (btn[8].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[1].getText().equals("O")) && (btn[4].getText().equals("O")) && (btn[7].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[2].getText().equals("O")) && (btn[4].getText().equals("O")) && (btn[6].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[2].getText().equals("O")) && (btn[5].getText().equals("O")) && (btn[8].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[3].getText().equals("O")) && (btn[4].getText().equals("O")) && (btn[5].getText().equals("O"))) {
+            oGuanya();
+        } else if ((btn[6].getText().equals("O")) && (btn[7].getText().equals("O")) && (btn[8].getText().equals("O"))) {
+            oGuanya();
         } else if (chance_flag == 9) {
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             alerta.setTitle("Resultat");
@@ -127,7 +124,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    public void xGuanya(int x1, int x2, int x3) {
+    public void xGuanya() {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Resultat");
         alerta.setHeaderText("Enhorabona per arribar fins tant lluny jugador X");
@@ -138,7 +135,7 @@ public class HelloController implements Initializable {
         finish();
     }
 
-    public void oGuanya(int x1, int x2, int x3) {
+    public void oGuanya() {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Resultat");
         alerta.setHeaderText("Enhorabona per arribar fins tant lluny jugador O");
@@ -162,10 +159,10 @@ public class HelloController implements Initializable {
         int chance = random.nextInt(100);
         if (chance % 2 == 0) {
             turnActual = true;
-            lblTurn.setText("TURN DE: X");
+            lblTurn.setText("TORN DE: X");
         } else {
             turnActual = false;
-            lblTurn.setText("TURN DE: O");
+            lblTurn.setText("TORN DE: O");
         }
     }
 
